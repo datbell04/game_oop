@@ -73,7 +73,8 @@ public class GamePanel extends JPanel implements Runnable{
     public AssetSetter aSetter = new AssetSetter(this);
     public UI ui = new UI(this);
     public EventHandler eHandler = new EventHandler(this);
-//    Config config = new Config(this);
+    
+    //public Config config = new Config(this);
     public PathFinder pFinder = new PathFinder(this);
     
     Thread gameThread;
@@ -123,10 +124,12 @@ public class GamePanel extends JPanel implements Runnable{
     	aSetter.setInteractiveTile();
     	gameState = titleState;
     	
-    	tempScreen = new BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB);
+    	tempScreen = new BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB);// màn hình tạm thời
     	g2 = (Graphics2D)tempScreen.getGraphics();
     	
-    	// setFullScreen();
+    	if(fullScreenOn == true){
+            setFullScreen();
+        }
     	
     }
     

@@ -83,6 +83,9 @@ public class Sound {
 	}
 	public void checkVolume() {
 		switch(volumeScale) {
+			// THANG ÂM LƯỢNG NẰM TỪ -80F TỚI 6F
+			// KHÔNG CÓ SỰ KHÁC BIỆ Ừ -30 TRỞ XUỐNG HẦU NHƯ KO NGHE ĐC GÌ
+			
 		
 		case 0:volume = -80f; break;
 		case 1: volume = -20f; break;

@@ -546,7 +546,7 @@ public class Entity {
     		}
     		else if(enTopY < nextY && enLeftX > nextX) {
     			// down or left
-    			direction = "down";
+    			//direction = "down";
     			checkCollision();
     			if(collisionOn == true) {
     				direction = "left";

@@ -1096,7 +1096,7 @@ public class UI {
 		}
 		
 		// BACK
-		textY += gp.tileSize*2;
+		textY += gp.tileSize + 24;
 		g2.drawString("Back", textX, textY);
 		if(commandNum == 5) {
 			g2.drawString(">", textX-25, textY);
@@ -1132,6 +1132,7 @@ public class UI {
 		g2.drawRect(textX, textY, 120, 24);
 		volumeWidth = 24 * gp.se.volumeScale;
 		g2.fillRect(textX, textY, volumeWidth, 24);
+		//gp.config.saveConfig();
 		
 	}
 	
@@ -1170,18 +1171,18 @@ public class UI {
 		textY = frameY + gp.tileSize;
 		g2.drawString(text, textX, textY);
 		
-		textX  = gp.tileSize + frameX;
+		textX  = 12+ frameX;
 		textY += gp.tileSize;
-		g2.drawString("Move", textX, textY); textY += gp.tileSize;
+		g2.drawString("Right/Left/Up/Down", textX, textY); textY += gp.tileSize;
 		g2.drawString("Confirm/Attack", textX, textY); textY += gp.tileSize;
 		g2.drawString("Skill", textX, textY); textY += gp.tileSize;
 		g2.drawString("Character Screen", textX, textY); textY += gp.tileSize;
 		g2.drawString("Mini Map", textX, textY); textY += gp.tileSize;
 		g2.drawString("Options", textX, textY); textY += gp.tileSize;
 		
-		textX = frameX + gp.tileSize*6;
+		textX = frameX + gp.tileSize*5 + 24;
 		textY = frameY + gp.tileSize*2;
-		g2.drawString("WASD", textX, textY); textY += gp.tileSize;
+		g2.drawString("D/A/W/S", textX, textY); textY += gp.tileSize;
 		g2.drawString("Enter", textX, textY); textY += gp.tileSize;
 		g2.drawString("F", textX, textY); textY += gp.tileSize;
 		g2.drawString("C", textX, textY); textY += gp.tileSize;
@@ -1204,7 +1205,7 @@ public class UI {
 		int textX = frameX + gp.tileSize;
 		int textY = frameY + gp.tileSize * 3;
 		
-		currentDialogue = "Quit Game?";
+		currentDialogue = "Quit Game and return \n to the title screen?";
 		for(String line: currentDialogue.split("\n")) {
 			g2.drawString(line, textX, textY);
 			textY += 40;
