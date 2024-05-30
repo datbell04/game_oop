@@ -8,6 +8,9 @@ import java.io.IOException;
 
 public class Config {
     GamePanel gp;
+    public Config(GamePanel gp){
+        this.gp = gp;
+    }
    
 
     public void saveConfig(){

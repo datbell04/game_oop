@@ -7,6 +7,7 @@ package main;
 import entity.Entity;
 import entity.Player;
 import entity.Projectile;
+import environment.EnvironmentManager;
 import monster.MON_RedSlime;
 import object.OBJ_Key;
 
@@ -73,8 +74,9 @@ public class GamePanel extends JPanel implements Runnable{
     public AssetSetter aSetter = new AssetSetter(this);
     public UI ui = new UI(this);
     public EventHandler eHandler = new EventHandler(this);
+    EnvironmentManager eManager= new EnvironmentManager(this);
     
-    //public Config config = new Config(this);
+    // Config config = new Config(this);
     public PathFinder pFinder = new PathFinder(this);
     
     Thread gameThread;
@@ -122,6 +124,8 @@ public class GamePanel extends JPanel implements Runnable{
     	aSetter.setNPC();
     	aSetter.setMonster();
     	aSetter.setInteractiveTile();
+        eManager.setup();
+
     	gameState = titleState;
     	
     	tempScreen = new BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB);// màn hình tạm thời
@@ -408,6 +412,9 @@ public class GamePanel extends JPanel implements Runnable{
             
             // EMPTY ENTITY LIST
             entityList.clear();
+
+            // Environment
+            eManager.draw(g2);
             
             // UI
             ui.draw(g2);
